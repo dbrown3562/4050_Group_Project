@@ -1,13 +1,3 @@
-#include <stdio.h>
-#include <stdlib.h>
-#include <iostream>
-
-#include <GL/gl.h>
-#include <GL/glu.h>
-#include <GL/glut.h>
-
-#include <math.h>
-
 #include "objects.h"
 
 //Height and width, as well as rotation items.
@@ -20,6 +10,7 @@ GLfloat xRotation, yRotation;
 Skybox skybox = Skybox();
 Room room = Room();
 
+ComputerScreen compScreen = ComputerScreen();
 
 
 //------------------------------------------------------------------------------------------------------------------------------------------
@@ -63,13 +54,13 @@ void display(void){
     glRotatef(xRotation, 0.0, 1.0, 0.0);
 
 	//Call all of the class display functions
-    
 
 
     //Skybox and Room must be displayed first
     skybox.display();
     room.display();
 
+	compScreen.display();
 
 	//End the display loop
 	glFlush();
@@ -140,6 +131,9 @@ int main(int argc, char *argv[]){
         glutReshapeFunc(reshape);
         glutIdleFunc(display);
         glutKeyboardFunc(keyboard);
+
+		// Textures must load after OpenGL context creation...for now, just calling it here
+		compScreen.loadTexture();
 
         initWindow();
         glutMainLoop();

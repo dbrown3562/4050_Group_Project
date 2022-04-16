@@ -1,13 +1,3 @@
-#include <stdio.h>
-#include <stdlib.h>
-#include <iostream>
-
-#include <GL/gl.h>
-#include <GL/glu.h>
-#include <GL/glut.h>
-
-#include <math.h>
-
 #include "objects.h"
 
 Skybox::Skybox() {}
