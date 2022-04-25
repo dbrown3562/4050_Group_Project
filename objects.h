@@ -68,4 +68,14 @@ private:
 	GLuint woodGrainID;
 };
 
+class Curtains{
+public:
+	Curtains();
+	void display();
+	void loadTexture();
+private:
+	GLuint metalID;
+	GLuint fabricID;
+};
+
 #endif

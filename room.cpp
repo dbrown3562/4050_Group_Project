@@ -11,6 +11,10 @@ void Room::loadMoreRoomTextures(){
 	rugID = createTexture("img/Rug.jpg");
 }
 
+void Room::loadMoreRoomTexturesII(){
+	doorID = createTexture("img/door.png");
+}
+
 
 
 //Each wall has 6 sides, to have a little bit of depth. The wall with a window will have more sides.
@@ -180,6 +184,18 @@ void rug(GLuint rug){
 	glDisable(GL_TEXTURE_2D);	
 }
 
+void Room::door(){
+	glBindTexture(GL_TEXTURE_2D, doorID);
+    glEnable(GL_TEXTURE_2D);
+	glColor3f(1.0f,1.0f,1.0f);
+	glBegin(GL_QUADS);
+		glTexCoord2f(0.0, 1.0); glVertex3f(-5.99f, 1.4f, 5.0f);
+		glTexCoord2f(1.0, 1.0); glVertex3f(-5.99f, 1.4f, 3.0f);
+		glTexCoord2f(1.0, 0.0); glVertex3f(-5.99f, -2.5f, 3.0f);
+		glTexCoord2f(0.0, 0.0); glVertex3f(-5.99f, -2.5f, 5.0f);
+	glEnd();
+	glDisable(GL_TEXTURE_2D);
+}
 
 
 void Room::display(){
@@ -192,4 +208,5 @@ void Room::display(){
 	ceiling();
 	floor();
 	rug(rugID);
+	door();
 }
