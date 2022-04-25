@@ -2,6 +2,16 @@
 
 Room::Room() {}
 
+void Room::loadRoomTextures(){
+	floorID = createTexture("img/floor.jpg");
+	ceilingID = createTexture("img/ceiling.jpg");
+}
+
+void Room::loadMoreRoomTextures(){
+	rugID = createTexture("img/Rug.jpg");
+}
+
+
 
 //Each wall has 6 sides, to have a little bit of depth. The wall with a window will have more sides.
 //Each wall will be 6f distance for the origin point and will be 12f wide and .2f thick. It will be 4f high.
@@ -82,15 +92,15 @@ void window(){ //We probably want a reflective texture here
 	//Add vertical and horizontal cross to make it more realistic
 	glColor3f(0.9f,0.9f,0.9f);
 	glBegin(GL_QUADS);
-		glVertex3f(-2.0f, -0.08f, -6.0f);
-		glVertex3f(-2.0f, -0.12f, -6.0f);
-		glVertex3f(2.0f, -0.12f, -6.0f);
-		glVertex3f(2.0f, -0.08f, -6.0f);
+		glVertex3f(-2.0f, -0.08f, -5.99f);
+		glVertex3f(-2.0f, -0.12f, -5.99f);
+		glVertex3f(2.0f, -0.12f, -5.99f);
+		glVertex3f(2.0f, -0.08f, -5.99f);
 
-		glVertex3f(-0.02f, 0.8f, -6.0f);
-		glVertex3f(-0.02f, -1.0f, -6.0f);
-		glVertex3f(0.02f, -1.0f, -6.0f);
-		glVertex3f(0.02f, 0.8f, -6.0f);
+		glVertex3f(-0.02f, 0.8f, -5.99f);
+		glVertex3f(-0.02f, -1.0f, -5.99f);
+		glVertex3f(0.02f, -1.0f, -5.99f);
+		glVertex3f(0.02f, 0.8f, -5.99f);
 	glEnd();	
 }
 
@@ -125,27 +135,49 @@ void wall4(){
 }
 
 //Ceiling
-void ceiling(){
+void Room::ceiling(){
+	glBindTexture(GL_TEXTURE_2D, ceilingID);
+	glTexParameteri( GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_REPEAT );
+	glTexParameteri( GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_REPEAT );
+    glEnable(GL_TEXTURE_2D);
 	//Maybe add popcorn ceiling texture??
 	glColor3f(1.0f,1.0f,0.95f);
 	glBegin(GL_QUADS);
-		glVertex3f(-6.0f, 1.5f, -6.0f);
-		glVertex3f(-6.0f, 1.5f, 6.0f);
-		glVertex3f(6.0f, 1.5f, 6.0f);
-		glVertex3f(6.0f, 1.5f, -6.0f);
+		glTexCoord2f(3.0, 0.0); glVertex3f(-6.0f, 1.5f, -6.0f);
+		glTexCoord2f(3.0, 3.0); glVertex3f(-6.0f, 1.5f, 6.0f);
+		glTexCoord2f(0.0, 3.0); glVertex3f(6.0f, 1.5f, 6.0f);
+		glTexCoord2f(0.0, 0.0); glVertex3f(6.0f, 1.5f, -6.0f);
 	glEnd();
+	glDisable(GL_TEXTURE_2D);
 }
 
 //Floor
-void floor(){
+void Room::floor(){
+	glBindTexture(GL_TEXTURE_2D, floorID);
+    glEnable(GL_TEXTURE_2D);
 	//Maybe add wood texture? Otherwise dark brown..
 	glColor3f(0.5f,0.35f,0.05f);
 	glBegin(GL_QUADS);
-		glVertex3f(-6.0f, -2.5f, -6.0f);
-		glVertex3f(-6.0f, -2.5f, 6.0f);
-		glVertex3f(6.0f, -2.5f, 6.0f);
-		glVertex3f(6.0f, -2.5f, -6.0f);
+		glTexCoord2f(1.0, 0.0); glVertex3f(-6.0f, -2.5f, -6.0f);
+		glTexCoord2f(1.0, 1.0); glVertex3f(-6.0f, -2.5f, 6.0f);
+		glTexCoord2f(0.0, 1.0); glVertex3f(6.0f, -2.5f, 6.0f);
+		glTexCoord2f(0.0, 0.0); glVertex3f(6.0f, -2.5f, -6.0f);
 	glEnd();
+	glDisable(GL_TEXTURE_2D);
+}
+
+//Rug
+void rug(GLuint rug){
+	glBindTexture(GL_TEXTURE_2D, rug);
+    glEnable(GL_TEXTURE_2D);
+	glColor3f(1.0f,1.0f,1.0f);
+	glBegin(GL_QUADS);
+		glTexCoord2f(1.0, 0.0); glVertex3f(-2.5f, -2.49f, -3.0f);
+		glTexCoord2f(1.0, 1.0); glVertex3f(-2.5f, -2.49f, 3.0f);
+		glTexCoord2f(0.0, 1.0); glVertex3f(2.5f, -2.49f, 3.0f);
+		glTexCoord2f(0.0, 0.0); glVertex3f(2.5f, -2.49f, -3.0f);
+	glEnd();
+	glDisable(GL_TEXTURE_2D);	
 }
 
 
@@ -159,4 +191,5 @@ void Room::display(){
 	window();
 	ceiling();
 	floor();
+	rug(rugID);
 }

@@ -15,12 +15,23 @@ class Skybox{
 public:
 	Skybox();
 	void display();
+	void loadTexture();
+private:
+	GLuint textureID;
 };
 
 class Room{
 public:
 	Room();
 	void display();
+	void loadRoomTextures();
+	void loadMoreRoomTextures();
+	void floor();
+	void ceiling();
+private:
+	GLuint floorID;
+	GLuint ceilingID;
+	GLuint rugID;
 };
 
 //Due to the room, the base of every object connected to the ground henceforth is at -2.5f.

@@ -13,6 +13,10 @@ Room room = Room();
 ComputerScreen compScreen = ComputerScreen();
 
 
+
+int firstIteration = 1;
+
+
 //------------------------------------------------------------------------------------------------------------------------------------------
 
 //===============================================================================//
@@ -112,6 +116,7 @@ void initWindow()
     glMatrixMode( GL_PROJECTION );
     glLoadIdentity();
     glEnable(GL_BLEND);
+    glEnable(GL_DEPTH_TEST);
 	glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
     glClearColor(0.0,0.0,0.0,0.0);
 	glShadeModel(GL_SMOOTH);
@@ -132,8 +137,14 @@ int main(int argc, char *argv[]){
         glutIdleFunc(display);
         glutKeyboardFunc(keyboard);
 
-		// Textures must load after OpenGL context creation...for now, just calling it here
-		compScreen.loadTexture();
+        if(firstIteration){
+			// Textures must load after OpenGL context creation...for now, just calling it here
+			compScreen.loadTexture();
+			room.loadRoomTextures();
+			room.loadMoreRoomTextures();
+			skybox.loadTexture();
+			firstIteration = 0;
+		}
 
         initWindow();
         glutMainLoop();
