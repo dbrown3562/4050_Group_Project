@@ -45,4 +45,14 @@ private:
 	GLuint textureID;
 };
 
+class Desk{
+public:
+	Desk();
+	void display();
+	void loadDeskTextures();
+private:
+	GLuint woodGrainID;
+	GLuint keyboardID;
+};
+
 #endif

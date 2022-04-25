@@ -11,6 +11,7 @@ Skybox skybox = Skybox();
 Room room = Room();
 
 ComputerScreen compScreen = ComputerScreen();
+Desk desk = Desk();
 
 
 
@@ -64,6 +65,7 @@ void display(void){
     skybox.display();
     room.display();
 
+    desk.display();
 	compScreen.display();
 
 	//End the display loop
@@ -143,6 +145,7 @@ int main(int argc, char *argv[]){
 			room.loadRoomTextures();
 			room.loadMoreRoomTextures();
 			skybox.loadTexture();
+			desk.loadDeskTextures();
 			firstIteration = 0;
 		}
 
