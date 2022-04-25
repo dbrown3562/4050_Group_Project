@@ -26,12 +26,15 @@ public:
 	void display();
 	void loadRoomTextures();
 	void loadMoreRoomTextures();
+	void loadMoreRoomTexturesII();
 	void floor();
 	void ceiling();
+	void door();
 private:
 	GLuint floorID;
 	GLuint ceilingID;
 	GLuint rugID;
+	GLuint doorID;
 };
 
 //Due to the room, the base of every object connected to the ground henceforth is at -2.5f.
@@ -53,6 +56,16 @@ public:
 private:
 	GLuint woodGrainID;
 	GLuint keyboardID;
+};
+
+class Chair{
+public:
+	Chair();
+	void display();
+	void loadChairTextures();
+private:
+	GLuint metalID;
+	GLuint woodGrainID;
 };
 
 #endif

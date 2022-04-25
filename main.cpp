@@ -12,6 +12,7 @@ Room room = Room();
 
 ComputerScreen compScreen = ComputerScreen();
 Desk desk = Desk();
+Chair chair = Chair();
 
 
 
@@ -66,7 +67,9 @@ void display(void){
     room.display();
 
     desk.display();
+    chair.display();
 	compScreen.display();
+
 
 	//End the display loop
 	glFlush();
@@ -144,8 +147,10 @@ int main(int argc, char *argv[]){
 			compScreen.loadTexture();
 			room.loadRoomTextures();
 			room.loadMoreRoomTextures();
+			room.loadMoreRoomTexturesII();
 			skybox.loadTexture();
 			desk.loadDeskTextures();
+			chair.loadChairTextures();
 			firstIteration = 0;
 		}
 

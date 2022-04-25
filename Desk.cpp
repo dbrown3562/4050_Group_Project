@@ -7,6 +7,34 @@ void Desk::loadDeskTextures(){
 	keyboardID = createTexture("img/keyboard.jpg");
 }
 
+void keyboard(GLuint tex){
+   		//Add a keyboard on the desk
+   		//It'll be an ugly triangle (doesn't need a back)
+   	glBegin(GL_QUADS);
+   		glVertex3f(1.2f, -0.65f, 3.7f);
+   		glVertex3f(1.2f, -0.65f, 5.5f);
+   		glVertex3f(1.2f, -0.55f, 5.5f);
+   		glVertex3f(1.2f, -0.65f, 3.7f);
+
+   		glVertex3f(-0.05f, -0.65f, 3.7f);
+   		glVertex3f(-0.05f, -0.65f, 5.5f);
+   		glVertex3f(-0.05f, -0.55f, 5.5f);
+   		glVertex3f(-0.05f, -0.65f, 3.7f);
+   	glEnd();
+
+   		//Keyboard texture
+   	glEnable(GL_TEXTURE_2D);
+   	glBindTexture(GL_TEXTURE_2D, tex);
+
+   	glBegin(GL_QUADS);
+   		glTexCoord2f(1.0,0.0); glVertex3f(1.2f, -0.65f, 3.7f);
+   		glTexCoord2f(1.0,1.0); glVertex3f(1.2f, -0.55f, 5.5f);
+   		glTexCoord2f(0.0,1.0); glVertex3f(-0.05f, -0.55f, 5.5f);
+   		glTexCoord2f(0.0,0.0); glVertex3f(-0.05f, -0.65f, 3.7f);
+   	glEnd();
+   	glDisable(GL_TEXTURE_2D);
+}
+
 void Desk::display(){
 	//Desk consists of 4 feet
 	//2 are shorter to have some drawer type elements
@@ -146,32 +174,5 @@ void Desk::display(){
 
    		glEnd();
    	glDisable(GL_TEXTURE_2D);
-   		//Knobs (cylinders)
-   	// glColor3f(1.0,1.0,1.0);
-
-   	// 	//Add a keyboard on the desk
-   	// 	//It'll be an ugly triangle (doesn't need a back)
-   	// glBegin(GL_QUADS);
-   	// 	glVertex3f(1.2f, -0.65f, 3.7f);
-   	// 	glVertex3f(1.2f, -0.65f, 5.5f);
-   	// 	glVertex3f(1.2f, -0.55f, 5.5f);
-   	// 	glVertex3f(1.2f, -0.65f, 3.7f);
-
-   	// 	glVertex3f(-0.05f, -0.65f, 3.7f);
-   	// 	glVertex3f(-0.05f, -0.65f, 5.5f);
-   	// 	glVertex3f(-0.05f, -0.55f, 5.5f);
-   	// 	glVertex3f(-0.05f, -0.65f, 3.7f);
-
-   	// 	//Keyboard texture
-   	// 	glEnable(GL_TEXTURE_2D);
-   	// 	glBindTexture(GL_TEXTURE_2D, keyboardID);
-
-   	// 	glTexCoord2f(1.0,0.0); glVertex3f(1.2f, -0.65f, 3.7f);
-   	// 	glTexCoord2f(1.0,1.0); glVertex3f(1.2f, -0.55f, 5.5f);
-   	// 	glTexCoord2f(0.0,1.0); glVertex3f(-0.05f, -0.55f, 5.5f);
-   	// 	glTexCoord2f(0.0,0.0); glVertex3f(-0.05f, -0.65f, 3.7f);
-
-
-    // glEnd();
-    // glDisable(GL_TEXTURE_2D);
+   	keyboard(keyboardID);
 }
