@@ -16,6 +16,8 @@ Chair chair = Chair();
 Dresser dresser = Dresser();
 Nightstand nightstand = Nightstand();
 Bed bed = Bed();
+Lamp lamp = Lamp();
+Fan fan = Fan();
 Curtains curtains = Curtains();
 
 
@@ -76,6 +78,8 @@ void display(void){
     dresser.display();
     bed.display();
     nightstand.display();
+    lamp.display();
+    fan.display();
 	compScreen.display();
 
 
@@ -163,6 +167,8 @@ int main(int argc, char *argv[]){
 			dresser.loadTexture();
 			bed.loadTexture();
 			nightstand.loadTexture();
+			lamp.loadTexture();
+			fan.loadTexture();
 			firstIteration = 0;
 		}
 

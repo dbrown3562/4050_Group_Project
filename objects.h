@@ -108,5 +108,26 @@ private:
 	GLuint woodGrainID;
 };
 
+class Lamp{
+public:
+	Lamp();
+	void display();
+	void loadTexture();
+private:
+	GLuint metalID;
+	GLuint fabricID;
+};
+
+
+class Fan{
+public:
+	Fan();
+	void display();
+	void loadTexture();
+private:
+	GLuint metalID;
+	GLuint woodGrainID;
+};
+
 
 #endif
