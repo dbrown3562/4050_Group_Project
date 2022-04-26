@@ -197,6 +197,19 @@ void Room::door(){
 	glDisable(GL_TEXTURE_2D);
 }
 
+void Room::doorII(){
+	glBindTexture(GL_TEXTURE_2D, doorID);
+    glEnable(GL_TEXTURE_2D);
+	glColor3f(1.0f,1.0f,1.0f);
+	glBegin(GL_QUADS);
+		glTexCoord2f(0.0, 1.0); glVertex3f(-5.99f, 1.4f, -5.0f);
+		glTexCoord2f(1.0, 1.0); glVertex3f(-5.99f, 1.4f, -3.0f);
+		glTexCoord2f(1.0, 0.0); glVertex3f(-5.99f, -2.5f, -3.0f);
+		glTexCoord2f(0.0, 0.0); glVertex3f(-5.99f, -2.5f, -5.0f);
+	glEnd();
+	glDisable(GL_TEXTURE_2D);	
+}
+
 
 void Room::display(){
 	glColor3f(1.0f, 1.0f, 0.9f); //Try for a cream color for the walls.
@@ -209,4 +222,5 @@ void Room::display(){
 	floor();
 	rug(rugID);
 	door();
+	doorII();
 }

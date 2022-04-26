@@ -13,6 +13,7 @@ Room room = Room();
 ComputerScreen compScreen = ComputerScreen();
 Desk desk = Desk();
 Chair chair = Chair();
+Dresser dresser = Dresser();
 Curtains curtains = Curtains();
 
 
@@ -70,6 +71,7 @@ void display(void){
     desk.display();
     chair.display();
     curtains.display();
+    dresser.display();
 	compScreen.display();
 
 
@@ -154,6 +156,7 @@ int main(int argc, char *argv[]){
 			desk.loadDeskTextures();
 			chair.loadChairTextures();
 			curtains.loadTexture();
+			dresser.loadTexture();
 			firstIteration = 0;
 		}
 

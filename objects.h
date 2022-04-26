@@ -30,6 +30,7 @@ public:
 	void floor();
 	void ceiling();
 	void door();
+	void doorII();
 private:
 	GLuint floorID;
 	GLuint ceilingID;
@@ -77,5 +78,16 @@ private:
 	GLuint metalID;
 	GLuint fabricID;
 };
+
+class Dresser{
+public:
+	Dresser();
+	void display();
+	void loadTexture();
+private:
+	GLuint woodGrainID;
+	GLuint drawerID;
+};
+
 
 #endif
