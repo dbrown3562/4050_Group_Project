@@ -14,6 +14,7 @@ ComputerScreen compScreen = ComputerScreen();
 Desk desk = Desk();
 Chair chair = Chair();
 Dresser dresser = Dresser();
+Nightstand nightstand = Nightstand();
 Bed bed = Bed();
 Curtains curtains = Curtains();
 
@@ -74,6 +75,7 @@ void display(void){
     curtains.display();
     dresser.display();
     bed.display();
+    nightstand.display();
 	compScreen.display();
 
 
@@ -160,6 +162,7 @@ int main(int argc, char *argv[]){
 			curtains.loadTexture();
 			dresser.loadTexture();
 			bed.loadTexture();
+			nightstand.loadTexture();
 			firstIteration = 0;
 		}
 

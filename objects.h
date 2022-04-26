@@ -99,5 +99,14 @@ private:
 	GLuint fabricID;
 };
 
+class Nightstand{
+public:
+	Nightstand();
+	void display();
+	void loadTexture();
+private:
+	GLuint woodGrainID;
+};
+
 
 #endif
