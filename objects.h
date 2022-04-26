@@ -122,7 +122,7 @@ private:
 class Fan{
 public:
 	Fan();
-	void display();
+	void display(float);
 	void loadTexture();
 private:
 	GLuint metalID;

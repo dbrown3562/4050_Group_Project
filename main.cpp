@@ -6,6 +6,8 @@
 
 GLfloat xRotation, yRotation;
 
+float fanRotation = 0.0;
+
 //All classes defined outside of the loop to prevent continuous instantiation
 Skybox skybox = Skybox();
 Room room = Room();
@@ -79,9 +81,10 @@ void display(void){
     bed.display();
     nightstand.display();
     lamp.display();
-    fan.display();
+    fan.display(fanRotation);
 	compScreen.display();
 
+	fanRotation += 1;
 
 	//End the display loop
 	glFlush();
