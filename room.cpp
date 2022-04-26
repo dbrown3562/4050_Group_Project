@@ -35,25 +35,25 @@ void wall1(){
 
 	//Top
 	glBegin(GL_QUADS);
-		glVertex3f(-6.0f, 0.8f, -6.0f);
-		glVertex3f(-6.0f, 1.5f, -6.0f);
-		glVertex3f(6.0f, 1.5f, -6.0f);
-		glVertex3f(6.0f, 0.8f, -6.0f);
+		glVertex3f(-6.0f, 1.8f, -6.0f);
+		glVertex3f(-6.0f, 2.5f, -6.0f);
+		glVertex3f(6.0f, 2.5f, -6.0f);
+		glVertex3f(6.0f, 1.8f, -6.0f);
 	glEnd();
 
 	//Left
 	glBegin(GL_QUADS);
 		glVertex3f(-6.0f, -2.5f, -6.0f);
-		glVertex3f(-6.0f, 1.5f, -6.0f);
-		glVertex3f(-2.0f, 1.5f, -6.0f);
+		glVertex3f(-6.0f, 2.5f, -6.0f);
+		glVertex3f(-2.0f, 2.5f, -6.0f);
 		glVertex3f(-2.0f, -2.5f, -6.0f);
 	glEnd();
 
 	//Right
 	glBegin(GL_QUADS);
 		glVertex3f(2.0f, -2.5f, -6.0f);
-		glVertex3f(2.0f, 1.5f, -6.0f);
-		glVertex3f(6.0f, 1.5f, -6.0f);
+		glVertex3f(2.0f, 2.5f, -6.0f);
+		glVertex3f(6.0f, 2.5f, -6.0f);
 		glVertex3f(6.0f, -2.5f, -6.0f);
 	glEnd();
 
@@ -65,18 +65,18 @@ void wall1(){
 		glVertex3f(2.0f, -1.0f, -6.2f);
 		glVertex3f(2.0f, -1.0f, -6.0f);
 
-		glVertex3f(-2.0f, 0.8f, -6.0f);
-		glVertex3f(-2.0f, 0.8f, -6.2f);
-		glVertex3f(2.0f, 0.8f, -6.2f);
-		glVertex3f(2.0f, 0.8f, -6.0f);
+		glVertex3f(-2.0f, 1.8f, -6.0f);
+		glVertex3f(-2.0f, 1.8f, -6.2f);
+		glVertex3f(2.0f, 1.8f, -6.2f);
+		glVertex3f(2.0f, 1.8f, -6.0f);
 
-		glVertex3f(-2.0f, 0.8f, -6.0f);
-		glVertex3f(-2.0f, 0.8f, -6.2f);
+		glVertex3f(-2.0f, 1.8f, -6.0f);
+		glVertex3f(-2.0f, 1.8f, -6.2f);
 		glVertex3f(-2.0f, -1.0f, -6.2f);
 		glVertex3f(-2.0f, -1.0f, -6.0f);
 
-		glVertex3f(2.0f, 0.8f, -6.0f);
-		glVertex3f(2.0f, 0.8f, -6.2f);
+		glVertex3f(2.0f, 1.8f, -6.0f);
+		glVertex3f(2.0f, 1.8f, -6.2f);
 		glVertex3f(2.0f, -1.0f, -6.2f);
 		glVertex3f(2.0f, -1.0f, -6.0f);
 	glEnd();
@@ -87,24 +87,24 @@ void window(){ //We probably want a reflective texture here
 	glColor4f(1.0f, 1.0f, 1.0f, 0.2f); //Make transparent
 	//Only need first and second quads
 	glBegin(GL_QUADS);
-		glVertex3f(-2.0f, 0.8f, -6.0f);
+		glVertex3f(-2.0f, 1.8f, -6.0f);
 		glVertex3f(-2.0f, -1.0f, -6.0f);
 		glVertex3f(2.0f, -1.0f, -6.0f);
-		glVertex3f(2.0f, 0.8f, -6.0f);
+		glVertex3f(2.0f, 1.8f, -6.0f);
 	glEnd();
 
 	//Add vertical and horizontal cross to make it more realistic
 	glColor3f(0.9f,0.9f,0.9f);
 	glBegin(GL_QUADS);
-		glVertex3f(-2.0f, -0.08f, -5.99f);
-		glVertex3f(-2.0f, -0.12f, -5.99f);
-		glVertex3f(2.0f, -0.12f, -5.99f);
-		glVertex3f(2.0f, -0.08f, -5.99f);
+		glVertex3f(-2.0f, 0.50f, -5.99f);
+		glVertex3f(-2.0f, 0.54f, -5.99f);
+		glVertex3f(2.0f, 0.54f, -5.99f);
+		glVertex3f(2.0f, 0.50f, -5.99f);
 
-		glVertex3f(-0.02f, 0.8f, -5.99f);
+		glVertex3f(-0.02f, 1.8f, -5.99f);
 		glVertex3f(-0.02f, -1.0f, -5.99f);
 		glVertex3f(0.02f, -1.0f, -5.99f);
-		glVertex3f(0.02f, 0.8f, -5.99f);
+		glVertex3f(0.02f, 1.8f, -5.99f);
 	glEnd();	
 }
 
@@ -112,8 +112,8 @@ void window(){ //We probably want a reflective texture here
 void wall2(){
 	glBegin(GL_QUADS);
 		glVertex3f(6.0f, -2.5f, -6.0f);
-		glVertex3f(6.0f, 1.5f, -6.0f);
-		glVertex3f(6.0f, 1.5f, 6.0f);
+		glVertex3f(6.0f, 2.5f, -6.0f);
+		glVertex3f(6.0f, 2.5f, 6.0f);
 		glVertex3f(6.0f, -2.5f, 6.0f);
 	glEnd();
 }
@@ -122,8 +122,8 @@ void wall2(){
 void wall3(){
 	glBegin(GL_QUADS);
 		glVertex3f(-6.0f, -2.5f, -6.0f);
-		glVertex3f(-6.0f, 1.5f, -6.0f);
-		glVertex3f(-6.0f, 1.5f, 6.0f);
+		glVertex3f(-6.0f, 2.5f, -6.0f);
+		glVertex3f(-6.0f, 2.5f, 6.0f);
 		glVertex3f(-6.0f, -2.5f, 6.0f);
 	glEnd();
 }
@@ -132,8 +132,8 @@ void wall3(){
 void wall4(){
 	glBegin(GL_QUADS);
 		glVertex3f(-6.0f, -2.5f, 6.0f);
-		glVertex3f(-6.0f, 1.5f, 6.0f);
-		glVertex3f(6.0f, 1.5f, 6.0f);
+		glVertex3f(-6.0f, 2.5f, 6.0f);
+		glVertex3f(6.0f, 2.5f, 6.0f);
 		glVertex3f(6.0f, -2.5f, 6.0f);
 	glEnd();
 }
@@ -147,10 +147,10 @@ void Room::ceiling(){
 	//Maybe add popcorn ceiling texture??
 	glColor3f(1.0f,1.0f,0.95f);
 	glBegin(GL_QUADS);
-		glTexCoord2f(3.0, 0.0); glVertex3f(-6.0f, 1.5f, -6.0f);
-		glTexCoord2f(3.0, 3.0); glVertex3f(-6.0f, 1.5f, 6.0f);
-		glTexCoord2f(0.0, 3.0); glVertex3f(6.0f, 1.5f, 6.0f);
-		glTexCoord2f(0.0, 0.0); glVertex3f(6.0f, 1.5f, -6.0f);
+		glTexCoord2f(3.0, 0.0); glVertex3f(-6.0f, 2.5f, -6.0f);
+		glTexCoord2f(3.0, 3.0); glVertex3f(-6.0f, 2.5f, 6.0f);
+		glTexCoord2f(0.0, 3.0); glVertex3f(6.0f, 2.5f, 6.0f);
+		glTexCoord2f(0.0, 0.0); glVertex3f(6.0f, 2.5f, -6.0f);
 	glEnd();
 	glDisable(GL_TEXTURE_2D);
 }

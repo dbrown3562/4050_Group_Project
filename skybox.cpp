@@ -16,10 +16,10 @@ void Skybox::display(){
 	
 	glColor3f(1.0f,1.0f,1.0f);
 	glBegin(GL_QUADS);
-		glTexCoord2f(0.0, 1.0); glVertex3f(-3.5f, 1.5f, -10.0f);
-		glTexCoord2f(0.0, 0.0); glVertex3f(-3.5f, -2.8f, -10.0f);
-		glTexCoord2f(1.0, 0.0); glVertex3f(3.5f, -2.8f, -10.0f);
-		glTexCoord2f(1.0, 1.0); glVertex3f(3.5f, 1.5f, -10.0f);
+		glTexCoord2f(0.0, 1.0); glVertex3f(-3.5f, 3.0f, -9.0f);
+		glTexCoord2f(0.0, 0.0); glVertex3f(-3.5f, -2.5f, -9.0f);
+		glTexCoord2f(1.0, 0.0); glVertex3f(3.5f, -2.5f, -9.0f);
+		glTexCoord2f(1.0, 1.0); glVertex3f(3.5f, 3.0f, -9.0f);
 	glEnd();
 	glDisable(GL_TEXTURE_2D);
 }

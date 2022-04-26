@@ -19,8 +19,8 @@ void curtainRod(GLuint tex){
 		float angle = (float)i * M_PI/180.0f;
 		float x = radius * cos(angle);
 		float y = radius * sin(angle);
-		glVertex3f(-2.0,1.0+y,-5.95+x);
-		glVertex3f(2.0,1.0+y,-5.95+x);
+		glVertex3f(-2.0,2.0+y,-5.95+x);
+		glVertex3f(2.0,2.0+y,-5.95+x);
 		glTexCoord2f(1.0,0.0);glTexCoord2f(1.0,1.0);glTexCoord2f(0.0,1.0);glTexCoord2f(0.0,0.0);
 	}
 	glEnd();
@@ -33,15 +33,15 @@ void Curtains::display(){
    	glBindTexture(GL_TEXTURE_2D, fabricID);
 	glBegin(GL_QUADS);
 		glColor4f(1.0f,1.0f,1.0f,.7f);
-		glTexCoord2f(1.0,0.0); glVertex3f(-2.0, 1.0, -5.9);
+		glTexCoord2f(1.0,0.0); glVertex3f(-2.0, 2.0, -5.9);
 		glTexCoord2f(1.0,1.0); glVertex3f(-2.0, -1.3, -5.9);
 		glTexCoord2f(0.0,1.0); glVertex3f(-1.3, -1.3, -5.9);
-		glTexCoord2f(0.0,0.0); glVertex3f(-1.3, 1.0, -5.9);
+		glTexCoord2f(0.0,0.0); glVertex3f(-1.3, 2.0, -5.9);
 
-		glTexCoord2f(1.0,0.0); glVertex3f(2.0, 1.0, -5.9);
+		glTexCoord2f(1.0,0.0); glVertex3f(2.0, 2.0, -5.9);
 		glTexCoord2f(1.0,1.0); glVertex3f(2.0, -1.3, -5.9);
 		glTexCoord2f(0.0,1.0); glVertex3f(1.3, -1.3, -5.9);
-		glTexCoord2f(0.0,0.0); glVertex3f(1.3, 1.0, -5.9);
+		glTexCoord2f(0.0,0.0); glVertex3f(1.3, 2.0, -5.9);
 
 	glEnd();
 	glDisable(GL_TEXTURE_2D);
