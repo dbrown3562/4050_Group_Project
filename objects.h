@@ -89,5 +89,15 @@ private:
 	GLuint drawerID;
 };
 
+class Bed{
+public:
+	Bed();
+	void display();
+	void loadTexture();
+private:
+	GLuint woodGrainID;
+	GLuint fabricID;
+};
+
 
 #endif
