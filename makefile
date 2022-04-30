@@ -18,8 +18,8 @@ PROGFILES = \
 
 targets default: $(TARGETS)
 
-$(PROGFILES:.cpp=): main.o skybox.o room.o ComputerScreen.o std_image_implementation.o
-	$(CC) -o $(TARGET) main.o skybox.o room.o ComputerScreen.o std_image_implementation.o ${LFLAGS}
+$(PROGFILES:.cpp=): main.o skybox.o room.o ComputerScreen.o bed.o Chair.o Curtains.o Desk.o Dresser.o Fan.o Lamp.o Nightstand.o std_image_implementation.o
+	$(CC) -o $(TARGET) main.o skybox.o room.o ComputerScreen.o bed.o Chair.o Curtains.o Desk.o Dresser.o Fan.o Lamp.o Nightstand.o std_image_implementation.o ${LFLAGS}
 
 depend :
 	makedepend ${PROGFILES} $(DEPS)
