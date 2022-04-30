@@ -24,6 +24,10 @@ void DrawerFace(GLuint tex){
 
 
 void Dresser::display(){
+	// Enable ambient and diffuse material, can overwrite in object implementation
+	glColorMaterial(GL_FRONT, GL_AMBIENT_AND_DIFFUSE);
+	glEnable(GL_COLOR_MATERIAL);
+
 	//create four feet
 	glBindTexture(GL_TEXTURE_2D, woodGrainID);
 	glEnable(GL_TEXTURE_2D);
@@ -81,4 +85,6 @@ void Dresser::display(){
     glDisable(GL_TEXTURE_2D);
 
     DrawerFace(drawerID);
+
+	glDisable(GL_COLOR_MATERIAL);
 }

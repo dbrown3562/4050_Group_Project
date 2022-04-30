@@ -9,6 +9,11 @@ void ComputerScreen::loadTexture() {
 
 void ComputerScreen::display() {
     glPushMatrix();
+
+    // Enable ambient and diffuse material, can overwrite in object implementation
+	glColorMaterial(GL_FRONT, GL_AMBIENT_AND_DIFFUSE);
+	glEnable(GL_COLOR_MATERIAL);
+
     glTranslatef(0.0, 0.0, 3.0);
 
     // Create our Computer Screen frame
@@ -73,6 +78,7 @@ void ComputerScreen::display() {
     glEnd();
 
     glDisable(GL_TEXTURE_2D);
+    glDisable(GL_COLOR_MATERIAL);
 
     glPopMatrix();
 }

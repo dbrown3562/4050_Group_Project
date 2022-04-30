@@ -45,6 +45,10 @@ void bladeP2(GLuint tex, float angle){
 }
 
 void Fan::display(float angle){
+	// Enable ambient and diffuse material, can overwrite in object implementation
+	glColorMaterial(GL_FRONT, GL_AMBIENT_AND_DIFFUSE);
+	glEnable(GL_COLOR_MATERIAL);
+
 	//I want to have it so that the fan blades are moving at all times, if that's a possibility...
 	//There will be three fan blades.
 
@@ -75,4 +79,6 @@ void Fan::display(float angle){
 
 	glEnd();
 	glDisable(GL_TEXTURE_2D);
+
+	glDisable(GL_COLOR_MATERIAL);
 }

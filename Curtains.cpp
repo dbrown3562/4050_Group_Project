@@ -28,6 +28,10 @@ void curtainRod(GLuint tex){
 }
 
 void Curtains::display(){
+	// Enable ambient and diffuse material, can overwrite in object implementation
+	glColorMaterial(GL_FRONT, GL_AMBIENT_AND_DIFFUSE);
+	glEnable(GL_COLOR_MATERIAL);
+
 	//Curtains are just two rectangles
 	glEnable(GL_TEXTURE_2D);
    	glBindTexture(GL_TEXTURE_2D, fabricID);
@@ -46,4 +50,6 @@ void Curtains::display(){
 	glEnd();
 	glDisable(GL_TEXTURE_2D);
 	curtainRod(metalID);
+
+	glDisable(GL_COLOR_MATERIAL);
 }

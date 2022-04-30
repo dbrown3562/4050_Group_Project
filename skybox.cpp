@@ -11,6 +11,10 @@ void Skybox::loadTexture() {
 //Maybe add a convincing sky texture later
 //It is just a big cube.
 void Skybox::display(){
+	// Enable ambient and diffuse material, can overwrite in object implementation
+	glColorMaterial(GL_FRONT, GL_AMBIENT_AND_DIFFUSE);
+	glEnable(GL_COLOR_MATERIAL);
+
 	glBindTexture(GL_TEXTURE_2D, textureID);
     glEnable(GL_TEXTURE_2D);
 	
@@ -22,4 +26,6 @@ void Skybox::display(){
 		glTexCoord2f(1.0, 1.0); glVertex3f(3.5f, 3.0f, -9.0f);
 	glEnd();
 	glDisable(GL_TEXTURE_2D);
+
+	glDisable(GL_COLOR_MATERIAL);
 }

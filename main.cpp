@@ -142,6 +142,12 @@ void initWindow()
 	glShadeModel(GL_SMOOTH);
     glOrtho(0,WIDTH,0,HEIGHT,0, 1);
     glMatrixMode( GL_MODELVIEW );
+
+	// Setup lighting
+	GLfloat globalAmbient[] = {0.2, 0.2, 0.2, 1.0};
+	glLightModelfv(GL_LIGHT_MODEL_AMBIENT, globalAmbient);
+	glLightModelf(GL_LIGHT_MODEL_LOCAL_VIEWER, GL_TRUE);
+	glEnable(GL_LIGHTING);
 }
 
 

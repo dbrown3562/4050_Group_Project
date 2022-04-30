@@ -11,7 +11,14 @@ void coneTop(GLuint tex){
 	//Display the cone top of the object
 	//glEnable(GL_TEXTURE_2D);
    	//glBindTexture(GL_TEXTURE_2D, tex);
-	glColor4f(1.0,1.0,1.0, 1.0f);
+
+	GLfloat ambient[] = {0.8, 0.0, 0.8, 1.0};
+	GLfloat diffuse[] = {0.2, 0.0, 0.2, 1.0};
+	GLfloat specular[] = {0.1, 0.1, 0.1, 1.0};
+	GLfloat emission[] = {0.0, 0.0, 0.0, 1.0};
+	setMaterial(ambient, diffuse, specular, emission);
+	glColor4f(1.0,0.0,1.0, 1.0f);
+
 	float radius = .5;
 	float radius2 = .4;
 	glBegin(GL_QUAD_STRIP);
@@ -32,6 +39,35 @@ void coneTop(GLuint tex){
 void Lamp::display(){
 	//Display the lamp on the nightstand
 	//Lamp is going to be a circle base, a small rod, and a sphere "light"
+
+	// Sample point light
+	// TODO: MAKE LAMP EMISSIVE
+	glPushMatrix();
+	glTranslated(5.4, 0.8, -1.9);
+	glColor3f(1.0, 0.0, 1.0);
+	glBegin(GL_LINES);
+		glVertex3f(0.0, 0.0, 0.0);
+		glVertex3f(0.0, -1.0, 0.0);
+	glEnd();
+	glutSolidSphere(0.2, 20, 20);
+
+	GLfloat lampAmbient[] = {1.0, 0.0, 1.0, 1.0};
+	GLfloat lampDiffuse[] = {1.0, 0.0, 1.0, 1.0};
+	GLfloat lampSpecular[] = {1.0, 1.0, 1.0, 1.0};
+	GLfloat lampPosition[] = {0.0, 0.0, 0.0, 1.0};
+	GLfloat lampSpotDirection[] = {0.0, -1.0, 0.0};
+	glLightfv(GL_LIGHT0, GL_AMBIENT, lampAmbient);
+	glLightfv(GL_LIGHT0, GL_DIFFUSE, lampDiffuse);
+	glLightfv(GL_LIGHT0, GL_SPECULAR, lampSpecular);
+	glLightfv(GL_LIGHT0, GL_POSITION, lampPosition);
+	//glLightfv(GL_LIGHT0, GL_SPOT_DIRECTION, lampSpotDirection);
+	glLightf(GL_LIGHT0, GL_SPOT_CUTOFF, 90.0);
+	//glLightf(GL_LIGHT0, GL_SPOT_EXPONENT, 10.0);
+	glLightf(GL_LIGHT0, GL_CONSTANT_ATTENUATION, 0.25);
+	glLightf(GL_LIGHT0, GL_LINEAR_ATTENUATION, 0.25);
+	glLightf(GL_LIGHT0, GL_QUADRATIC_ATTENUATION, 0.25);
+	glEnable(GL_LIGHT0);
+	glPopMatrix();
 
 	glEnable(GL_TEXTURE_2D);
    	glBindTexture(GL_TEXTURE_2D, metalID);

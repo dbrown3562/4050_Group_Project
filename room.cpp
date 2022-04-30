@@ -212,6 +212,10 @@ void Room::doorII(){
 
 
 void Room::display(){
+	// Enable ambient and diffuse material, can overwrite in object implementation
+	glColorMaterial(GL_FRONT, GL_AMBIENT_AND_DIFFUSE);
+	glEnable(GL_COLOR_MATERIAL);
+
 	glColor3f(1.0f, 1.0f, 0.9f); //Try for a cream color for the walls.
 	wall2();
 	wall3();
@@ -223,4 +227,6 @@ void Room::display(){
 	rug(rugID);
 	door();
 	doorII();
+
+	glDisable(GL_COLOR_MATERIAL);
 }

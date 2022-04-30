@@ -154,6 +154,12 @@ void drawBedFrame(GLuint tex){
 }
 
 void Bed::display(){
+	// Enable ambient and diffuse material, can overwrite in object implementation
+	glColorMaterial(GL_FRONT, GL_AMBIENT_AND_DIFFUSE);
+	glEnable(GL_COLOR_MATERIAL);
+	
 	drawBedFrame(woodGrainID);
 	drawMattressAndPillow(fabricID);
+
+	glDisable(GL_COLOR_MATERIAL);
 }

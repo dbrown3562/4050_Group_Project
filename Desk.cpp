@@ -36,6 +36,10 @@ void keyboard(GLuint tex){
 }
 
 void Desk::display(){
+	// Enable ambient and diffuse material, can overwrite in object implementation
+	glColorMaterial(GL_FRONT, GL_AMBIENT_AND_DIFFUSE);
+	glEnable(GL_COLOR_MATERIAL);
+
 	//Desk consists of 4 feet
 	//2 are shorter to have some drawer type elements
 	//So many rectangles :(
@@ -175,4 +179,6 @@ void Desk::display(){
    		glEnd();
    	glDisable(GL_TEXTURE_2D);
    	keyboard(keyboardID);
+
+	glDisable(GL_COLOR_MATERIAL);
 }

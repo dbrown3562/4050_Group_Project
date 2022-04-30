@@ -38,4 +38,13 @@ inline GLuint createTexture(std::string filename) {
 	return textureID;
 }
 
+// Sets the current material based on given material settings
+// Each setting requires 4 values
+inline void setMaterial(GLfloat ambient[4], GLfloat diffuse[4], GLfloat specular[4], GLfloat emission[4]) {
+	glMaterialfv(GL_FRONT, GL_AMBIENT, ambient);
+	glMaterialfv(GL_FRONT, GL_DIFFUSE, diffuse);
+	glMaterialfv(GL_FRONT, GL_SPECULAR, specular);
+	glMaterialfv(GL_FRONT, GL_EMISSION, emission);
+}
+
 #endif

@@ -7,6 +7,10 @@ void Nightstand::loadTexture(){
 }
 
 void Nightstand::display(){
+	// Enable ambient and diffuse material, can overwrite in object implementation
+	glColorMaterial(GL_FRONT, GL_AMBIENT_AND_DIFFUSE);
+	glEnable(GL_COLOR_MATERIAL);
+
 	glBindTexture(GL_TEXTURE_2D, woodGrainID);
 	glTexParameteri( GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_MIRRORED_REPEAT );
 	glTexParameteri( GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_MIRRORED_REPEAT );
@@ -77,4 +81,6 @@ void Nightstand::display(){
   		glTexCoord2f(0.0, 0.0);	glVertex3f((5.99), -0.5f, -0.4);
 
     glEnd();
+
+	glDisable(GL_COLOR_MATERIAL);
 }

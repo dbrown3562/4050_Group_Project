@@ -37,6 +37,10 @@ void topPart(GLuint tex){
 }
 
 void Chair::display(){
+	// Enable ambient and diffuse material, can overwrite in object implementation
+	glColorMaterial(GL_FRONT, GL_AMBIENT_AND_DIFFUSE);
+	glEnable(GL_COLOR_MATERIAL);
+
 	glBindTexture(GL_TEXTURE_2D, metalID);
     glEnable(GL_TEXTURE_2D);
     glColor3f(1.0, 1.0, 1.0);
@@ -71,4 +75,6 @@ void Chair::display(){
     glEnd();
     glDisable(GL_TEXTURE_2D);
     topPart(woodGrainID);
+
+	glDisable(GL_COLOR_MATERIAL);
 }
