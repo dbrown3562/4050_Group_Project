@@ -86,6 +86,25 @@ void display(void){
 
 	fanRotation += 1;
 
+	// Our fan light
+	glPushMatrix();
+	glTranslatef(0.0, 2.0, 0.0);
+	glutSolidSphere(0.25, 10, 10);
+	GLfloat light_position[] = { 0.0, 0.0, 0.0, 1.0 };
+	GLfloat lampAmbient[] = {1.0, 1.0, 1.0, 1.0};
+	GLfloat lampDiffuse[] = {1.0, 1.0, 1.0, 1.0};
+	GLfloat lampSpecular[] = {1.0, 1.0, 1.0, 1.0};
+	GLfloat lampSpotDirection[] = {0.0, 0.0, -1.0};
+	glLightfv(GL_LIGHT0, GL_AMBIENT, lampAmbient);
+	glLightfv(GL_LIGHT0, GL_DIFFUSE, lampDiffuse);
+	glLightfv(GL_LIGHT0, GL_SPECULAR, lampSpecular);
+	glLightfv(GL_LIGHT0, GL_POSITION, light_position);
+	//glLightf(GL_LIGHT0, GL_CONSTANT_ATTENUATION, 0.7);
+	glLightf(GL_LIGHT0, GL_LINEAR_ATTENUATION, 0.05);
+	glLightf(GL_LIGHT0, GL_QUADRATIC_ATTENUATION, 0.05);
+	glEnable(GL_LIGHT0);
+	glPopMatrix();
+
 	//End the display loop
 	glFlush();
 	glutSwapBuffers(); 
