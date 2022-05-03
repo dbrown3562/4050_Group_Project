@@ -43,18 +43,18 @@ void wall1(){
 
 	//Left
 	glBegin(GL_QUADS);
-		glVertex3f(-6.0f, -2.5f, -6.0f);
-		glVertex3f(-6.0f, 2.5f, -6.0f);
-		glVertex3f(-2.0f, 2.5f, -6.0f);
-		glVertex3f(-2.0f, -2.5f, -6.0f);
+		glVertex3f(-6.0f, -1.0f, -6.0f);
+		glVertex3f(-6.0f, 1.8f, -6.0f);
+		glVertex3f(-2.0f, 1.8f, -6.0f);
+		glVertex3f(-2.0f, -1.0f, -6.0f);
 	glEnd();
 
 	//Right
 	glBegin(GL_QUADS);
-		glVertex3f(2.0f, -2.5f, -6.0f);
-		glVertex3f(2.0f, 2.5f, -6.0f);
-		glVertex3f(6.0f, 2.5f, -6.0f);
-		glVertex3f(6.0f, -2.5f, -6.0f);
+		glVertex3f(2.0f, -1.0f, -6.0f);
+		glVertex3f(2.0f, 1.8f, -6.0f);
+		glVertex3f(6.0f, 1.8f, -6.0f);
+		glVertex3f(6.0f, -1.0f, -6.0f);
 	glEnd();
 
 	//Interior quads (darker color to distinguish)
