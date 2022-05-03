@@ -56,17 +56,17 @@ void Lamp::display(){
 	GLfloat lampSpecular[] = {1.0, 1.0, 1.0, 1.0};
 	GLfloat lampPosition[] = {0.0, 0.0, 0.0, 1.0};
 	GLfloat lampSpotDirection[] = {0.0, -1.0, 0.0};
-	glLightfv(GL_LIGHT0, GL_AMBIENT, lampAmbient);
-	glLightfv(GL_LIGHT0, GL_DIFFUSE, lampDiffuse);
-	glLightfv(GL_LIGHT0, GL_SPECULAR, lampSpecular);
-	glLightfv(GL_LIGHT0, GL_POSITION, lampPosition);
-	//glLightfv(GL_LIGHT0, GL_SPOT_DIRECTION, lampSpotDirection);
-	glLightf(GL_LIGHT0, GL_SPOT_CUTOFF, 90.0);
-	//glLightf(GL_LIGHT0, GL_SPOT_EXPONENT, 10.0);
-	glLightf(GL_LIGHT0, GL_CONSTANT_ATTENUATION, 0.25);
-	glLightf(GL_LIGHT0, GL_LINEAR_ATTENUATION, 0.25);
-	glLightf(GL_LIGHT0, GL_QUADRATIC_ATTENUATION, 0.25);
-	glEnable(GL_LIGHT0);
+	glLightfv(GL_LIGHT1, GL_AMBIENT, lampAmbient);
+	glLightfv(GL_LIGHT1, GL_DIFFUSE, lampDiffuse);
+	glLightfv(GL_LIGHT1, GL_SPECULAR, lampSpecular);
+	glLightfv(GL_LIGHT1, GL_POSITION, lampPosition);
+	//glLightfv(GL_LIGHT1, GL_SPOT_DIRECTION, lampSpotDirection);
+	glLightf(GL_LIGHT1, GL_SPOT_CUTOFF, 90.0);
+	//glLightf(GL_LIGHT1, GL_SPOT_EXPONENT, 10.0);
+	glLightf(GL_LIGHT1, GL_CONSTANT_ATTENUATION, 0.25);
+	glLightf(GL_LIGHT1, GL_LINEAR_ATTENUATION, 0.25);
+	glLightf(GL_LIGHT1, GL_QUADRATIC_ATTENUATION, 0.25);
+	glEnable(GL_LIGHT1);
 	glPopMatrix();
 
 	glEnable(GL_TEXTURE_2D);
