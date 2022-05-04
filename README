@@ -1,0 +1,11 @@
+To run:
+
+All files should be provided.
+You will be able to compile this program by typing "make" in the terminal.
+Once compilation has finished, simply type "./room" to run.
+
+Controls:
+
+W and S control looking up and down respectively.
+A and D control looking left and right respectively.
+
